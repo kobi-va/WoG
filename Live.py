@@ -3,17 +3,21 @@ import MemoryGame
 import CurrencyRouletteGame
 import os
 
+linux_home = (os.path.expanduser('~'))
+
 # WoG Welcome message
 def welcome(name):
     print(f"Hello {name}, and welcome to the World of Games (WoG).\nHere you can find many cool games to play.")
     print()
+
 
 # WoG Clear old score txt and start from 0
 def clear_score():
     if os.name == "nt":
         os.system("del /F /Q score.txt")
     else:
-        os.system("rm -f score.txt")
+        os.system(f"rm -f {linux_home}/WoG_Project/score.txt")
+
 
 # Run the chosen game
 def load_game():

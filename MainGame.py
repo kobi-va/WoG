@@ -3,6 +3,8 @@ import os
 from Live import load_game, welcome, clear_score
 import Utils
 
+linux_home = (os.path.expanduser('~'))
+
 # Get gamer name
 your_name = input("Hi, What is your name?: ")
 while not your_name.isalpha():
@@ -12,8 +14,12 @@ while not your_name.isalpha():
 welcome(your_name)
 
 # Remove old score txt file
-if os.path.isfile('./score.txt'):
-    clear_score()
+if os.name == "nt":
+    if os.path.isfile('./score.txt'):
+        clear_score()
+else:
+    if os.path.isfile(f'{linux_home}/WoG_Project/score.txt'):
+        clear_score()
 
 # Run WoG
 load_game()
@@ -30,15 +36,20 @@ while retry == "Y":
 if retry == "N":
     print("Bye Bye!")
 # Run Flask web app
-    if os.path.isfile('./score.txt'):
-        print("To see your total scores please visit http://localhost:1234/")
-
-        if os.name == "nt":
+    if os.name == "nt":
+        if os.path.isfile('./score.txt'):
+            print("To see your total scores please visit http://localhost:1234/")
             os.system("start /min python MainScores.py")
         else:
-            os.system('python MainScores.py')
-    time.sleep(30)
-    exit()
+            time.sleep(30)
+            exit()
+    else:
+        if os.path.isfile(f'{linux_home}/WoG_Project/score.txt'):
+            print("To see your total scores please visit http://localhost:1234/")
+            os.system('python3 ~/WoG_Project/MainScores.py')
+        else:
+            time.sleep(30)
+            exit()
 else:
     time.sleep(4)
     exit()
