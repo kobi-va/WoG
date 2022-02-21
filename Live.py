@@ -2,6 +2,7 @@ import GuessGame
 import MemoryGame
 import CurrencyRouletteGame
 import os
+import Utils
 
 linux_home = (os.path.expanduser('~'))
 
@@ -15,9 +16,9 @@ def welcome(name):
 # WoG Clear old score txt and start from 0
 def clear_score():
     if os.name == "nt":
-        os.system("del /F /Q score.txt")
+        os.system(f"del /F /Q {Utils.score_file()}")
     else:
-        os.system(f"rm -f {linux_home}/WoG_Project/score.txt")
+        os.system(f"rm -f {linux_home}/WoG_Project/{Utils.score_file()}")
 
 
 # Run the chosen game
