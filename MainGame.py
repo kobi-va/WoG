@@ -39,6 +39,7 @@ if retry == "N":
     if os.name == "nt":
         if os.path.isfile('./score.txt'):
             print("To see your total scores please visit http://localhost:1234/")
+            print()
             os.system("start /min python MainScores.py")
         else:
             time.sleep(30)
