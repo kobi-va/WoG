@@ -5,6 +5,7 @@ import os
 
 linux_home = (os.path.expanduser('~'))
 
+
 # WoG Welcome message
 def welcome(name):
     print(f"Hello {name}, and welcome to the World of Games (WoG).\nHere you can find many cool games to play.")

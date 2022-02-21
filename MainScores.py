@@ -1,6 +1,7 @@
 from flask import *
 import Utils
 import os
+import sys
 
 linux_home = (os.path.expanduser('~'))
 
@@ -15,11 +16,18 @@ else:
 @app.route("/")
 def score_server():
     if os.name == "nt":
-        f = open(file, "r")
+        with open(file, "r") as f:
+            score = f.read()
     else:
-        f = open(f"{linux_home}/WoG_Project/{file}", "r")
-    score = f.read()
+        with open(f"{linux_home}/WoG_Project/{file}", "r") as f:
+            score = f.read()
+
     return render_template("score.html", score=score)
 
 
+sys.stdout = open(os.devnull, "w")
+
+
 app.run(host='localhost', port=1234)
+
+
