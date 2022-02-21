@@ -21,8 +21,10 @@ def score_server():
     else:
         with open(f"{linux_home}/WoG_Project/{file}", "r") as f:
             score = f.read()
-
-    return render_template("score.html", score=score)
+    try:
+        return render_template("score.html", score=score)
+    except:
+        abort(404)
 
 
 sys.stdout = open(os.devnull, "w")

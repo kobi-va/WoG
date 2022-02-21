@@ -46,6 +46,7 @@ if retry == "N":
     else:
         if os.path.isfile(f'{linux_home}/WoG_Project/score.txt'):
             print("To see your total scores please visit http://localhost:1234/")
+            print()
             os.system('python3 ~/WoG_Project/MainScores.py')
         else:
             time.sleep(30)
