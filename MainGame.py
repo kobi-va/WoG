@@ -15,10 +15,10 @@ welcome(your_name)
 
 # Remove old score txt file
 if os.name == "nt":
-    if os.path.isfile(f'./{Utils.score_file()}'):
+    if os.path.exists(f'./{Utils.score_file()}'):
         clear_score()
 else:
-    if os.path.isfile(f'{linux_home}/WoG_Project/{Utils.score_file()}'):
+    if os.path.exists(f'{linux_home}/WoG_Project/{Utils.score_file()}'):
         clear_score()
 
 # Run WoG
