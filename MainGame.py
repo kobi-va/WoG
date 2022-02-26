@@ -37,7 +37,7 @@ if retry == "N":
     print("Bye Bye!")
 # Run Flask web app
     if os.name == "nt":
-        if os.path.isfile('./score.txt'):
+        if os.path.isfile(f'./{Utils.score_file()}'):
             print("To see your total scores please visit http://localhost:1234/")
             print()
             os.system("start /min python MainScores.py")
@@ -45,7 +45,7 @@ if retry == "N":
             time.sleep(30)
             exit()
     else:
-        if os.path.isfile(f'{linux_home}/WoG_Project/score.txt'):
+        if os.path.isfile(f'{linux_home}/WoG_Project/{Utils.score_file()}'):
             print("To see your total scores please visit http://localhost:1234/")
             print()
             os.system('python3 ~/WoG_Project/MainScores.py')
