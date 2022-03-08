@@ -1,5 +1,6 @@
 FROM moditamam/selenium:python3
 RUN pip install flask
+RUN pip install webdriver_manager
 WORKDIR /app
 # Copy the current directory contents into the container as /app
 COPY *.py /app/
