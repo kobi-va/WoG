@@ -3,10 +3,8 @@ import Utils
 import os
 import sys
 
-linux_home = (os.path.expanduser('~'))
-
 file = Utils.score_file()
-app = Flask(__name__, template_folder="/")
+app = Flask(__name__, template_folder="./")
 
 
 @app.route("/")
