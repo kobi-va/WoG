@@ -9,7 +9,7 @@ chrome_options.add_argument(
     "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/95.0.4638.69 Safari/537.36")
 chrome_options.add_argument("--headless")
-browser = webdriver.Chrome("chromedriver", options=chrome_options)
+browser = webdriver.Chrome("executable_path="chromedriver", options=chrome_options)
 
 
 def test_scores_service():
