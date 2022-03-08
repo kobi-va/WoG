@@ -2,16 +2,14 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
-from webdriver_manager.chrome import ChromeDriverManager
 import sys
 
 chrome_options = Options()
-chrome_service = Service(ChromeDriverManager().install())
 chrome_options.add_argument(
     "--user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) "
     "Chrome/95.0.4638.69 Safari/537.36")
 chrome_options.add_argument("--headless")
-browser = webdriver.Chrome(service=chrome_service, options=chrome_options)
+browser = webdriver.Chrome("chromedriver, options=chrome_options)
 
 
 def test_scores_service():
