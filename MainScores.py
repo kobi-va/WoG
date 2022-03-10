@@ -10,7 +10,7 @@ app = Flask(__name__, template_folder="./")
 @app.route("/")
 def score_server():
     try:
-        f = open(file, "r")
+        f = open(f"./{file}, "r")
         score = f.read()
         return render_template("score.html", score=score)
         f.close()
