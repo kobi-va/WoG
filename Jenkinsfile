@@ -20,4 +20,10 @@ pipeline {
             }
         }
     }
+    post {
+        always {
+            echo 'Finalizing...'
+            'docker login -u kobivak0@gmail.com -p Kv_@1q2w3e'
+        }           
+    }
 }
