@@ -23,7 +23,7 @@ pipeline {
     post {
         always {
             echo 'Finalizing...'
-            sh 'docker login -u kobivak0@gmail.com -p Kv_@1q2w3e'
+            sh 'docker login -u kobiva -p Kv_@1q2w3e'
         }           
     }
 }
