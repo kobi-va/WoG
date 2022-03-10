@@ -6,7 +6,7 @@ import sys
 import os
 
 
-os.chmod('./chromedriver', 0755) 
+os.chmod('./chromedriver', 755)
 chrome_options = Options()
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-using")
