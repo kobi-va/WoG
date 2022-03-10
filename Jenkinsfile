@@ -18,13 +18,6 @@ pipeline {
                 sh 'sleep 5'
                 sh 'python3 e2e.py'
             }
-        }
-    }
-    post {
-        always {
-            echo 'Finalizing...'
-            sh 'docker login -u kobiva -p Kv_@1q2w3e'
-            sh 'docker-compose push'
-        }           
+        }        
     }
 }
