@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('Build docker image') {
             steps {
-                sh 'docker build -t moditamam/selenium:from-jenkins-pipeline .'
+                sh 'docker build -t kobiva/wog.'
             }
         }
         stage('Run & Test') {
             agent {
                 docker {
-                    image "moditamam/selenium:from-jenkins-pipeline"
+                    image "kobiva/wog"
                     reuseNode true
                 }
             }
