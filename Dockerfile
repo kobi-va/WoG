@@ -4,7 +4,7 @@ RUN pip install flask
 WORKDIR /app
 
 COPY *.py /app/
-COPY /tests /app/
+COPY /tests/e2e.py /app/
 COPY score.txt /app/
 COPY score.html /app/
 COPY error.html /app/
