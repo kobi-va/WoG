@@ -1,8 +1,8 @@
 pipeline {
     agent { label 'agent_1' }
     stages {
-        stage('Build docker image'){
-            steps{
+        stage('Build docker image') {
+            steps {
                 sh 'docker build -t moditamam/selenium:from-jenkins-pipeline .'
             }
         }
@@ -23,8 +23,8 @@ pipeline {
                 withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerhubPassword', usernameVariable: 'dockerhubUser')]) {
                 sh "docker login -u ${env.dockerhubUser} -p ${env.dockerhubPassword}"
                 sh 'docker push kobiva/wog:latest'
+                }
             }
         }        
     }
-}
 }
