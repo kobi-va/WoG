@@ -28,10 +28,10 @@ def test_scores_service():
 
 def main_function():
     if test_scores_service():
-        print("Sucess")
+        print("We found scores! test was passed!")
         sys.exit(0)
     else:
-        print("Failure")
+        print("Scores wasn't found. test was failed.")
         sys.exit(-1)
     
 
